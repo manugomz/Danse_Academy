@@ -1,1 +1,1 @@
-# Danse
+# Dansé Academy Studio
