@@ -27,10 +27,10 @@ const handleMenu = () => {
 
 
   return (
-    <header className="bg-gray-800 font-roboto">
-        <div className="flex items-center justify-between h-16 mx-auto px-4 sm:px-6 lg:px:8">
-          <Link href="/" className="text-white">
-            Dansé Academy Studio
+    <header className="font-roboto bg-black py-3">
+        <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px:8">
+          <Link href="/" >
+            <img src="../src/assets/images/Text_Logo.png" className="h-16"/>
           </Link>
           {/*Navlinks */}
           <div className="hidden md:block">
@@ -39,7 +39,7 @@ const handleMenu = () => {
                 <Link
                   key={index}
                   to={link.linkRute}
-                  className="text-gray-300 hover:bg-slate-500 hover:text-white px-3 py-2 rounded-md font-bold"
+                  className="text-yellow-light hover:bg-slate-500 hover:text-white px-3 py-2 rounded-md font-bold"
                 >
                   {link.title}
                 </Link>
@@ -50,7 +50,7 @@ const handleMenu = () => {
           <button
             type="button"
             onClick={handleMenu}
-            className="flex md:hidden items-center justify-center p-2 text-gray-300"
+            className="flex md:hidden items-center justify-center p-2 text-yellow-dark"
           >
             <span className="sr-only">Open Main Menu</span>
             {isOpen ? <RiCloseLine /> : <LuMenu />}
@@ -65,7 +65,7 @@ const handleMenu = () => {
                 <Link
                   key={index}
                   to={link.linkRute}
-                  className="text-gray-300 hover:bg-gray-700 hover:text-white
+                  className="text-yellow-light hover:bg-gray-dark hover:text-white text-center
                   block px-3 py-2 rounded-md text-base font-medium"
                 >
                   {link.title}
