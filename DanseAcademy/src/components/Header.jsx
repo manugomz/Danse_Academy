@@ -30,7 +30,7 @@ const handleMenu = () => {
     <header className="font-roboto bg-black py-3">
         <div className="flex items-center justify-between h-16 px-4 sm:px-6 lg:px:8">
           <Link href="/" >
-            <img src="../src/assets/images/Text_Logo.png" className="h-16"/>
+            <img src="../public/images/Text_Logo.png" alt="DANSÉ"className="h-16 text-yellow-light"/>
           </Link>
           {/*Navlinks */}
           <div className="hidden md:block">
