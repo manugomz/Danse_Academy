@@ -1,8 +1,10 @@
 import { useRef, useState } from "react";
+
 import Events from "./Events";
 import LandingPage from "./LandingPage";
 import Classes from "./Classes";
 import Bookings from "./Bookings";
+import Horarios from "./Horarios";
 
 const Home = () => {
 
@@ -20,10 +22,11 @@ const Home = () => {
     via-gray-light via-40% 
     to-slate-200 min-h-[55vh]"
     >
-      <LandingPage />
-      <Events ref={eventRef}/>
+      <LandingPage scrollToElement={scrollToElement} />
+      <Events />
       <Classes />
-      <Bookings/>
+      <Horarios />
+      <Bookings ref={eventRef}/>
 
     </main>
   );

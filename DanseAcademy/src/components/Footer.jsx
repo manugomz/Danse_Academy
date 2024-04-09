@@ -11,7 +11,7 @@ function Footer() {
   const titleFooter="";
 
   return (
-    <footer className="font-roboto bg-black py-3">
+    <footer className="font-roboto bg-gray-dark py-3">
       <div className="md:flex p-2 
       justify-around w-full 
       text-yellow-dark text-center 

@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, {useState, forwardRef } from "react";
 
-const Bookings = () => {
+import { IoAlertCircleOutline } from "react-icons/io5";
+
+const Bookings = forwardRef((props, ref) => {
+
   const [formData, setFormData] = useState({
     name: "",
+    clase: "",
     phone: "",
     message: ""
   });
@@ -16,20 +20,20 @@ const Bookings = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log(formData);
+  };
 
     return (
-      <div className="mx-auto max-w-md rounded-lg bg-white p-6 shadow-md">
-        <h2 className="mb-4 text-2xl font-semibold">
+      <section className="bg-yellow-dark pt-10 pb-24" ref={ref}>
+        <form className="mx-auto max-w-md rounded-lg bg-gray-dark p-6 text-yellow-dark" onSubmit={handleSubmit}>
+        <h2 className="mb-4 text-2xl font-semibold ">
           ¡Reserva tu clase ahora!
         </h2>
-        <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+          <fieldset className="mb-4">
             <label
-              className="mb-2 block text-sm font-bold text-gray-700"
+              className="mb-2 block text-sm font-bold"
               htmlFor="name">
-              Name
+              Nombre
             </label>
             <input
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none"
@@ -38,32 +42,34 @@ const Bookings = () => {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Your name"
+              onInvalid={F => F.target.setCustomValidity('⚠️ Por favor ingresa tu nombre')}
+              placeholder="Tu nombre aquí"
               required
             />
-          </div>
+          </fieldset>
           <div className="mb-4">
             <label
-              className="mb-2 block text-sm font-bold text-gray-700"
+              className="mb-2 block text-sm font-bold"
               htmlFor="name">
-              Name
+              Clase
             </label>
             <input
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none"
               type="text"
-              id="name"
-              name="name"
-              value={formData.name}
+              id="clase"
+              name="clase"
+              value={formData.clase}
               onChange={handleChange}
-              placeholder="Your name"
+              placeholder="¿A qué clase quieres asistir?"
+              onInvalid={F => F.target.setCustomValidity('⚠️ ¿A qué clase quieres asistir?')}
               required
             />
           </div>
           <div className="mb-4">
             <label
-              className="mb-2 block text-sm font-bold text-gray-700"
+              className="mb-2 block text-sm font-bold "
               htmlFor="phone">
-              Phone
+              Celular
             </label>
             <input
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none"
@@ -72,15 +78,16 @@ const Bookings = () => {
               name="phone"
               value={formData.phone}
               onChange={handleChange}
-              placeholder="Your phone"
+              placeholder="Tu número celular"
+              onInvalid={F => F.target.setCustomValidity('⚠️ Por favor ingresa tu número celular')}
               required
             />
           </div>
           <div className="mb-6">
             <label
-              className="mb-2 block text-sm font-bold text-gray-700"
+              className="mb-2 block text-sm font-bold "
               htmlFor="message">
-              Message
+              ¿Algo más?
             </label>
             <textarea
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 focus:outline-none"
@@ -88,19 +95,26 @@ const Bookings = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="Your message"
+              placeholder="Si tienes algún comentario, déjalo aquí"
               rows="4"
               required></textarea>
           </div>
+          
           <button
-            className="focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none"
+            className="rounded-xl
+            bg-yellow-dark z-10
+              px-4 py-2
+              text-zinc-800
+              drop-shadow-lg
+              transition-all ease-in text-xl focus:ring-yellow-light focus:ring-2
+              hover:scale-110 hover:bg-yellow-darker hover:text-slate-100"
             type="submit">
-            Send Message
+            Enviar
           </button>
         </form>
-      </div>
+      </section>
     );
-  };
-};
+  }
+);
 
 export default Bookings;

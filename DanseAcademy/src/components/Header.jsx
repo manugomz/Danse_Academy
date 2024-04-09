@@ -1,10 +1,16 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
+
+
+import { IoHome  } from "react-icons/io5";
+import { FaPersonFalling, FaCalendarPlus, FaCalendar } from "react-icons/fa6";
+import { IoMdBookmark} from "react-icons/io";
 import { LuMenu } from "react-icons/lu";
 import { RiCloseLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
 
 const navlinks = [
   {
+    icon:'IoHome',
     title: "Home",
     linkRute: "/",
   },
@@ -36,7 +42,7 @@ const handleMenu = () => {
 
   return (
     <header className=" bg-gray-dark py-3
-                        md:fixed md:h-full w-24 z-50
+                        md:fixed md:h-full md:w-24 z-50
                         
                         transition-all">
         <div className="flex md:flex-col items-center justify-between 
@@ -46,18 +52,38 @@ const handleMenu = () => {
           </Link>
           {/*Navlinks */}
             <nav className=" hidden md:flex flex-col gap-16 pt-10">
-              {navlinks.map((link, index) => (
-                <Link
-                  key={index}
-                  to={link.linkRute}
+                <button
+                  key='home'
                   className="text-yellow-light pb-3 font-bold font-2xl
                             text-center px-2 
-                            hover:border-white hover:border-b-4 hover:text-white
-                            focus:border-white focus:border-b-4 focus:text-white"
+                          hover:text-white focus:text-white"
                 >
-                  {link.title}
-                </Link>
-              ))}
+                  <IoHome className="text-2xl"/>
+                </button>
+                <button
+                  key='classes'
+                  className="text-yellow-light pb-3 font-bold font-2xl
+                            text-center px-2 
+                          hover:text-white focus:text-white"
+                >
+                  <FaPersonFalling  className="text-2xl rotate-45"/>
+                </button>
+                <button
+                  key='schedule'
+                  className="text-yellow-light pb-3 font-bold font-2xl
+                            text-center px-2 
+                          hover:text-white focus:text-white"
+                >
+                  <FaCalendar className="text-2xl"/>
+                </button>
+                <button
+                  key='booking'
+                  className="text-yellow-light pb-3 font-bold font-2xl
+                            text-center px-2 
+                          hover:text-white focus:text-white"
+                >
+                  <FaCalendarPlus className="text-2xl"/>
+                </button>
             </nav>
           {/*Hamburguer button */}
           <button

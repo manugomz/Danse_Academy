@@ -30,12 +30,12 @@ const Events = forwardRef((props, ref) => {
   };
 
   return (
-    <section className=" bg-gray-dark relative" ref={ref}>
+    <section className=" relative bg-gray-dark" ref={ref}>
       <h2
-        className="px-3 mb-32
-            pt-16 text-center text-6xl font-bold
-            text-yellow-dark">
-        Eventos
+        className="mb-10 px-3 text-center text-4xl
+            font-bold text-yellow-dark md:mb-32 md:pt-16
+            md:text-6xl">
+        Próximos ventos
       </h2>
       {modalOpen && (
         <Modal
@@ -47,11 +47,11 @@ const Events = forwardRef((props, ref) => {
           /* ADD redirect */
         />
       )}
-      <div className="flex justify-center gap-10 pb-56">
+      <div className="flex flex-col items-center justify-center gap-10 pb-56 md:flex-row">
         {eventos.map(event => (
           <img
             key={event.description}
-            className="max-h-[25vh] transform z-10
+            className="z-10 h-[90vw] max-w-max transform
                   cursor-pointer
                   rounded-md
                   transition-transform duration-300 ease-in-out hover:scale-105 md:max-h-[45vh]"
@@ -61,9 +61,9 @@ const Events = forwardRef((props, ref) => {
           />
         ))}
       </div>
-      <div class="absolute bottom-0 w-full">
-    <div class="h-[30vh] bg-gradient-to-b from-transparent to-yellow-dark"></div>
-  </div>
+      <div className="absolute bottom-0 w-full">
+        <div className="h-[80vh] bg-gradient-to-b from-transparent via-transparent via-70% to-yellow-dark"></div>
+      </div>
     </section>
   );
 });
