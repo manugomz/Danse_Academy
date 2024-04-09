@@ -9,7 +9,7 @@ const LandingPage = ({scrollToElement}) => {
       <div
         className="absolute inset-0 flex flex-col items-center justify-center
                       gap-10 bg-black bg-opacity-50 text-center text-slate-100">
-        <h3 className="text-5xl max-w-[80vw] md:text-7xl font-bold z-10 font-Permanent-Marker ">¡Vení y parchate a bailar!</h3>
+        <h3 className="text-5xl max-w-[80vw] md:text-7xl font-bold z-10 font-Permanent-Marker">¡Vení y parchate a bailar!</h3>
         <p className="md:max-w-[70vw] max-w-[80vw] text-xl md:text-3xl z-10">
           Dansé es un espacio donde la danza llega para todos, lleno de
           diversidad, amor por nuestras raices y donde la mejor manera de danzar

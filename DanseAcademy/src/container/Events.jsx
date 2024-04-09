@@ -35,7 +35,7 @@ const Events = forwardRef((props, ref) => {
         className="mb-10 px-3 text-center text-4xl
             font-bold text-yellow-dark md:mb-32 md:pt-16
             md:text-6xl">
-        Próximos ventos
+        Próximos eventos
       </h2>
       {modalOpen && (
         <Modal

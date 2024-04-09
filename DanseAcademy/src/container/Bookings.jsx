@@ -26,7 +26,7 @@ const Bookings = forwardRef((props, ref) => {
     return (
       <section className="bg-yellow-dark pt-10 pb-24" ref={ref}>
         <form className="mx-auto max-w-md rounded-lg bg-gray-dark p-6 text-yellow-dark" onSubmit={handleSubmit}>
-        <h2 className="mb-4 text-2xl font-semibold ">
+        <h2 className="mb-4 text-2xl font-semibold">
           ¡Reserva tu clase ahora!
         </h2>
           <fieldset className="mb-4">
@@ -67,7 +67,7 @@ const Bookings = forwardRef((props, ref) => {
           </div>
           <div className="mb-4">
             <label
-              className="mb-2 block text-sm font-bold "
+              className="mb-2 block text-sm font-bold"
               htmlFor="phone">
               Celular
             </label>
@@ -85,7 +85,7 @@ const Bookings = forwardRef((props, ref) => {
           </div>
           <div className="mb-6">
             <label
-              className="mb-2 block text-sm font-bold "
+              className="mb-2 block text-sm font-bold"
               htmlFor="message">
               ¿Algo más?
             </label>
