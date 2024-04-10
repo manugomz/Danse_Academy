@@ -1,17 +1,16 @@
 import React from "react";
 
-import Day from "../components/Day";
+import DayButton from "../components/DayButton";
 import Table from "../components/Table";
 
-const Horarios = () => {
+const Schedule = () => {
   const days = [
     "Lunes",
     "Martes",
     "Miércoles",
     "Jueves",
     "Viernes",
-    "Sábado",
-    "Domingo"
+    "Sábado"
   ];
 
   return (
@@ -22,11 +21,14 @@ const Horarios = () => {
             font-bold text-yellow-dark">
         Horarios
       </h2>
-      <div className="pb-16">
+      {/*Days for computer */}
+      <div className="px-6 mb-16 hidden md:flex justify-around">
         {days.map(day => (
-          <Day key={day} day={day} />
+          <DayButton key={day} day={day} />
         ))}
       </div>
+      {/*Days for mobile */}
+      
       <Table />
       <div className="absolute bottom-0 w-full">
         <div className="h-[80vh] bg-gradient-to-b from-transparent via-transparent via-70% to-yellow-dark"></div>
@@ -35,4 +37,4 @@ const Horarios = () => {
   );
 };
 
-export default Horarios;
+export default Schedule;

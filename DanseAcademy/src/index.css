@@ -7,6 +7,7 @@
 
 * {
   font-family: "Poppins";
+  ring: rgba(255, 255, 255, 0);
 }
 
 ::-webkit-scrollbar {
@@ -30,3 +31,4 @@
     transition-property: opacity;
     transition-duration: 0.5s; /* Duración de la transición */
   }
+

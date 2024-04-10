@@ -4,7 +4,7 @@ import Events from "./Events";
 import LandingPage from "./LandingPage";
 import Classes from "./Classes";
 import Bookings from "./Bookings";
-import Horarios from "./Horarios";
+import Schedule from "./Schedule";
 
 const Home = () => {
 
@@ -25,7 +25,7 @@ const Home = () => {
       <LandingPage scrollToElement={scrollToElement} />
       <Events />
       <Classes />
-      <Horarios />
+      <Schedule />
       <Bookings ref={eventRef}/>
 
     </main>

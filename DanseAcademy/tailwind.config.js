@@ -28,6 +28,7 @@ export default {
           'light':'#11CFE7',
           'dark':'#0FAEC3',
         },
+        green:'#bcf52f',
         gray:{
           'dark':'#151515',
           'light':'#8A898C',

@@ -5,7 +5,7 @@ const LandingPage = ({scrollToElement}) => {
     <div
       className="relative flex min-h-screen flex-col
                 bg-[url('../images/dance_group.png')]
-                p-10 md:bg-fixed">
+                p-10 md:bg-cover">
       <div
         className="absolute inset-0 flex flex-col items-center justify-center
                       gap-10 bg-black bg-opacity-50 text-center text-slate-100">
