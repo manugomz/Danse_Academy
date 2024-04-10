@@ -10,8 +10,8 @@ export default function ClassSchedule({ singleClass,color }) {
 
   return (
     <button className={styles.button}>
-      <h3 className=" text-2xl text-white">{singleClass.clase}</h3>
-      <p className="text-xs font-light text-white">{singleClass.nota}</p>
+      <h3 className=" text-2xl text-slate-200">{singleClass.clase}</h3>
+      <p  className="text-xs font-light text-slate-200">{singleClass.nota}</p>
       <p className={styles.professor}>{singleClass.profesor}</p>
       
     </button>

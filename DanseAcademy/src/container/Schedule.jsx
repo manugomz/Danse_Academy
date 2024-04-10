@@ -5,12 +5,12 @@ import Table from "../components/Table";
 
 const Schedule = () => {
   const days = [
-    "Lunes",
-    "Martes",
-    "Miércoles",
-    "Jueves",
-    "Viernes",
-    "Sábado"
+    "LUNES",
+    "MARTES",
+    "MIÉRCOLES",
+    "JUEVES",
+    "VIERNES",
+    "SÁBADO"
   ];
 
   return (
@@ -22,16 +22,13 @@ const Schedule = () => {
         Horarios
       </h2>
       {/*Days for computer */}
-      <div className="px-6 mb-16 hidden md:flex justify-around">
+      <div className="lg:px-5 mb-16 hidden md:flex justify-center lg:gap-20 md:gap-2 active">
         {days.map(day => (
           <DayButton key={day} day={day} />
         ))}
       </div>
       {/*Days for mobile */}
       <Table />
-      <div className="absolute bottom-0 w-full">
-        <div className="h-[80vh] bg-gradient-to-b from-transparent via-transparent via-70% to-yellow-dark"></div>
-      </div>
     </section>
   );
 };

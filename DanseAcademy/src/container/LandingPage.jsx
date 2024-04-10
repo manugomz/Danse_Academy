@@ -16,7 +16,9 @@ const LandingPage = ({scrollToElement}) => {
           es compartiendo con amigos.
         </p>
 
-        <button
+        <a
+          href="https://wa.me/+573002424995?text=Hola%20quiero%20reservar%20una%20clase"
+          target="_blank"
           className=" rounded-2xl
             bg-yellow-dark z-10
               px-4 py-2 text-lg
@@ -25,9 +27,9 @@ const LandingPage = ({scrollToElement}) => {
               transition-all ease-in
               md:px-6 md:py-4 md:text-2xl
               hover:scale-110 hover:bg-yellow-darker hover:text-slate-100"
-              onClick={scrollToElement}>
+              >
           Reserva ahora
-        </button>
+        </a>
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-dark"></div>
     </div>

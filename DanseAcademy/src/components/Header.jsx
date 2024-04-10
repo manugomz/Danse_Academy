@@ -6,6 +6,7 @@ import { FaPersonFalling, FaCalendarPlus, FaCalendar } from "react-icons/fa6";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { LuMenu } from "react-icons/lu";
 import { RiCloseLine } from "react-icons/ri";
+import FloatButton from "./FloatButton";
 
 const Header = () => {
 
@@ -45,7 +46,7 @@ const Header = () => {
           />
         </div>
         {/*Navlinks */}
-        <nav className=" hidden flex-col items-center gap-16 pt-10 md:flex">
+        <nav className=" hidden flex-col items-center md:gap-10 2xl:gap-16  md:pb-[28vh] pt-10 2xl:pb-[45vh] md:flex">
           <button key="home" className={styles.headerButton}>
             <div className="pl-2">
               <IoHome className="inline text-2xl" />
@@ -73,17 +74,8 @@ const Header = () => {
             </div>
             <span className="truncate text-clip pl-2 ">Horarios</span>
           </button>
-
-          <button
-            key="booking"
-            className={styles.headerButton}
-            onClick={() => {}}>
-            <div className="pl-2">
-              <FaCalendarPlus className="inline text-2xl" />
-            </div>
-            <span className="truncate text-clip pl-2 ">Reserva</span>
-          </button>
         </nav>
+          <FloatButton/>
         {/*Hamburguer button */}
         <button
           type="button"

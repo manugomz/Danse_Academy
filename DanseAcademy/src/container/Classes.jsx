@@ -22,9 +22,7 @@ const Classes = () => {
         Clases
       </h2>
       <EmbedVideo />
-      <div className="absolute bottom-0 w-full">
-        <div className="h-[80vh] bg-gradient-to-b from-transparent via-transparent via-70% to-gray-dark"></div>
-      </div>
+
     </section>
   );
 };
