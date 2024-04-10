@@ -97,7 +97,7 @@ export default function Table() {
   };
 
   return (
-    <table className="mb-32 w-[80%] self-center border-transparent md:w-auto z-30">
+    <table className="mb-32 max-w-[70%] self-center border-transparent z-30">
       <thead>
         <tr key='header'>
           <th className="p-12"></th>

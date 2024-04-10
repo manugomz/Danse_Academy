@@ -14,7 +14,7 @@ const Schedule = () => {
   ];
 
   return (
-    <section className=" relative flex flex-col bg-gray-dark pb-40">
+    <section className="relative flex flex-col bg-gray-dark pb-40">
       <h2
         className=" 
             my-24 text-center text-6xl
@@ -28,7 +28,6 @@ const Schedule = () => {
         ))}
       </div>
       {/*Days for mobile */}
-      
       <Table />
       <div className="absolute bottom-0 w-full">
         <div className="h-[80vh] bg-gradient-to-b from-transparent via-transparent via-70% to-yellow-dark"></div>

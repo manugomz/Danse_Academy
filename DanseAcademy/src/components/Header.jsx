@@ -8,6 +8,10 @@ import { LuMenu } from "react-icons/lu";
 import { RiCloseLine } from "react-icons/ri";
 
 const Header = () => {
+
+    const navlinks=['Home','Eventos','Clases', 'Horarios','Reservas'
+    ]
+
   const styles = {
     headerButton: `font-2xl w-8 flex transition-all ease-in
     font-bold text-yellow-light text-center
@@ -20,6 +24,10 @@ const Header = () => {
     setIsOpen(prev => !prev);
   };
 
+  const handleClick = () => {
+    setIsOpen(prev => !prev);
+  };
+
   return (
     <header
       className=" z-50 bg-gray-dark
@@ -29,11 +37,11 @@ const Header = () => {
       <div
         className="flex w-auto items-center justify-between 
                   sm:px-6 md:flex-col md:px-2 lg:px-4">
-        <div className="h-20">
+        <div className="h-12 pl-5 md:p-0 md:h-20 flex items-center">
           <img
             src="../images/Text_Logo.png"
             alt="DANSÉ"
-            className=" text-yellow-light"
+            className="h-10 md:h-auto text-yellow-light"
           />
         </div>
         {/*Navlinks */}
@@ -80,22 +88,23 @@ const Header = () => {
         <button
           type="button"
           onClick={handleMenu}
-          className="font-2xl flex items-center justify-center p-2 text-yellow-dark md:hidden">
+          className="font-2xl flex items-center justify-center pr-5 text-yellow-light md:hidden">
           <span className="sr-only">Open Main Menu</span>
-          {isOpen ? <RiCloseLine /> : <LuMenu />}
+          {isOpen ? <RiCloseLine className="text-2xl" /> : <LuMenu className="text-2xl" />}
         </button>
       </div>
       {/* Mobile Menu */}
       {isOpen ? (
-        <div className="font-2xl space-y-1 px-2 pb-3 pt-2 sm:px-3 md:hidden">
+        <div className="font-2xl space-y-1 px-2 pb-3 pt-2 sm:px-3 md:hidden flex flex-col ">
           {navlinks.map((link, index) => (
-            <Link
+            <button              
               key={index}
-              to={link.linkRute}
+              onClick={handleClick}
               className="font-2xl block rounded-md px-3
-                  py-2 text-center text-base font-medium text-yellow-light hover:bg-gray-dark hover:text-white">
-              {link.title}
-            </Link>
+                  py-2 text-center text-base font-md
+                  text-yellow-light focus:text-white">
+              {link}
+            </button>
           ))}
         </div>
       ) : null}
