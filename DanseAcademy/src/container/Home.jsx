@@ -4,14 +4,19 @@ import Classes from "./Classes";
 import Events from "./Events";
 import LandingPage from "./LandingPage";
 import Schedule from "./Schedule";
-import FloatButton from "../components/FloatButton";
+import FloatButton from "../components/FloatButton";//!Float button for mobile
+
+import useRefContext from "../hooks/useRefContext";
 
 const Home = () => {
 
-  const eventRef =useRef();
+  const { landingRef,eventsRef,classesRef,scheduleRef}=useRefContext();
+
 
   const scrollToElement = ()=>{
-    if (eventRef.current)eventRef.current.scrollIntoView({behavior:'smooth'})
+    if (classesRef.current)classesRef.current.scrollIntoView({behavior:'smooth'});
+    if (eventsRef.current)eventsRef.current.scrollIntoView({behavior:'smooth'});
+    if (scheduleRef.current)scheduleRef.current.scrollIntoView({behavior:'smooth'});
   }
 
   return (
@@ -22,10 +27,10 @@ const Home = () => {
     via-gray-light via-40% 
     to-slate-200 min-h-[55vh]"
     >
-      <LandingPage scrollToElement={scrollToElement} />
-      <Events />
-      <Classes />
-      <Schedule />
+      <LandingPage scrollToElement={scrollToElement} ref={landingRef}/>
+      <Events ref={eventsRef} />
+      <Classes ref={classesRef}/>
+      <Schedule ref={scheduleRef}/>
 
     </main>
   );

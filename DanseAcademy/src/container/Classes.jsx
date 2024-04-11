@@ -1,20 +1,11 @@
-import React from "react";
+import React, { forwardRef } from "react";
+
 import { EmbedVideo } from "../components/EmbedVideo";
 
-const Classes = () => {
-  const classes = {
-    Champeta: "enlace_foto",
-    Salsa: "enlace_foto",
-    Bachata: "enlace_foto",
-    Afrofusion: "enlace_foto",
-    Afrocolombiano: "enlace_foto",
-    Dancehall: "enlace_foto",
-    Reggaeton: "enlace_foto",
-    Heels: "enlace_foto"
-  };
+const Classes = forwardRef((props, ref) => {
 
   return (
-    <section className="relative flex flex-col justify-center bg-yellow-dark">
+    <section className="relative flex flex-col justify-center bg-yellow-dark" ref={ref}>
       <h2
         className=" 
             text-center text-6xl font-bold
@@ -25,6 +16,6 @@ const Classes = () => {
 
     </section>
   );
-};
+});
 
 export default Classes;

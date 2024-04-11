@@ -1,5 +1,4 @@
-import { React, useState } from "react";
-import { Link } from "react-router-dom";
+import { React, useState, forwardRefI } from "react";
 
 import { IoHome } from "react-icons/io5";
 import { FaPersonFalling, FaCalendarPlus, FaCalendar } from "react-icons/fa6";
@@ -10,14 +9,14 @@ import FloatButton from "./FloatButton";
 
 const Header = () => {
 
-    const navlinks=['Home','Eventos','Clases', 'Horarios','Reservas'
-    ]
-
   const styles = {
     headerButton: `font-2xl w-8 flex transition-all ease-in
     font-bold text-yellow-light text-center
     hover:text-white focus:text-white`
   };
+
+
+  const navlinks=['Home','Eventos','Clases', 'Horarios']
 
   const [isOpen, setIsOpen] = useState(false);
 
