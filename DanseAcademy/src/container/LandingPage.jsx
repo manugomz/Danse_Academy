@@ -42,7 +42,7 @@ const LandingPage = forwardRef((props, ref) => {
         </p>
 
         <a
-          href="https://wa.me/+573002424995?text=Hola%20quiero%20reservar%20una%20clase"
+          href="https://wa.me/+573002424995?text=Hola%20%C2%A1Quiero%20reservar%20una%20clase%21"
           target="_blank"
           className=" rounded-2xl
             bg-yellow-dark z-10

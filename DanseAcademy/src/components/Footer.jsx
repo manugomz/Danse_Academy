@@ -3,7 +3,6 @@ import { FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
-//! Hacer responsive textos
 
 function Footer() {
 
@@ -14,14 +13,14 @@ function Footer() {
   }
 
   return (
-    <footer className="bg-yellow-dark pb-3 pt-10 ml-24">
+    <footer className="bg-yellow-dark pb-3 pt-10 md:ml-24">
       <div
         className="w-full cursor-default 
       items-center justify-around 
       p-2 text-center 
       text-gray-dark md:flex">
         <div>
-          <h1 className="bg-gray-dark py-2 rounded-md">
+          <h1 className="bg-gray-dark py-2 rounded-md mx-[10%] md:px-0">
             <img
               src="../images/Round_Logo.png"
               className=" mx-auto h-32 md:h-20"
