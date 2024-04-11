@@ -1,10 +1,8 @@
 import { useContext } from "react";
-
-import {RefContext} from "../context/RefProvider";
+import refContext from '../context/RefProvider'
 
 const useRefContext = () => {
-  const { landingRef, eventsRef, classesRef, scheduleRef } =
-    useContext(RefContext);
+  const { landingRef, eventsRef, classesRef, scheduleRef } = useContext(refContext);
 
   return { landingRef, eventsRef, classesRef, scheduleRef };
 };
