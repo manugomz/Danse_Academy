@@ -9,7 +9,7 @@ const Classes = forwardRef((props, ref) => {
   const {classesRef} =useRefContext(RefContext);
 
   return (
-    <section className="relative flex flex-col justify-center bg-yellow-dark cursor-default " ref={classesRef} id="clases">
+    <section className="relative flex flex-col justify-center bg-yellow-dark cursor-default" ref={classesRef} id="clases">
       <h2
         className=" 
             text-center text-6xl font-bold

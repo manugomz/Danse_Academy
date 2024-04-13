@@ -7,8 +7,6 @@ import Table from "../components/Table";
 const Schedule = forwardRef((props, ref) => {
   const [dayForSchedule, setDayForSchedule] = useState("monday");
 
-  
-
   const styles = {
     button: `z-20 rounded-tl-2xl rounded-br-2xl px-5 py-2 ring-0
             transition-all ease-in font-bold
@@ -50,7 +48,7 @@ const Schedule = forwardRef((props, ref) => {
 
   return (
     <section
-      className="relative flex cursor-default flex-col bg-gray-dark pb-40"
+      className="relative flex cursor-default flex-col justify-center bg-gray-dark pb-40"
       ref={scheduleRef}
       id="horarios">
       <h2
@@ -63,7 +61,11 @@ const Schedule = forwardRef((props, ref) => {
       <div className="active mb-16 hidden justify-center md:flex md:gap-2 lg:gap-10 lg:px-5">
         {days.map((day, i) => {
           return i === 0 ? (
-            <button ref={dayButtonRef} onClick={() => clickMonday(i)} className={styles.button} key={day}>
+            <button
+              ref={dayButtonRef}
+              onClick={() => clickMonday(i)}
+              className={styles.button}
+              key={day}>
               <h3 className={styles.day}>{day}</h3>
             </button>
           ) : (
@@ -78,8 +80,11 @@ const Schedule = forwardRef((props, ref) => {
       </div>
       {/*Days for mobile */}
       <div
-        className="mb-10 w-[40%] self-center rounded-br-2xl rounded-tl-2xl bg-yellow-dark px-5 py-2 font-bold
-          text-gray-dark shadow-[0px_10px_0px_-3px_#FFF] md:hidden">
+        className="mb-10 w-[40%] self-center 
+        bg-yellow-dark px-5 py-2 rounded-br-2xl rounded-tl-2xl 
+        text-center text-2xl font-bold  text-gray-dark
+        shadow-[0px_10px_0px_-3px_#FFF] 
+        md:hidden">
         Lunes
       </div>
       <Table day={dayForSchedule} />

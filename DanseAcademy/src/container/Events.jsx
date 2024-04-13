@@ -60,7 +60,7 @@ const Events = forwardRef(() => {
             className="z-10 h-[80vh] max-w-max transform
                   cursor-pointer
                   rounded-md
-                  transition-transform duration-300 ease-in-out hover:scale-105 md:max-h-[60vh]"
+                  transition-transform duration-300 ease-in-out hover:scale-105 max-h-[50vh] md:max-h-[60vh]"
             src={event.img}
             alt={event.description}
             onClick={() => handleOpenModal(event)}
