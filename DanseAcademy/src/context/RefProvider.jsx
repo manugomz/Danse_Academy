@@ -1,10 +1,6 @@
-import React, { useRef, createContext } from 'react';
+import React, { createContext, useRef } from 'react';
 
-export const refContext = createContext();
-
-// export   const scrollToElement = ()=>{
-//   if (eventRef.current)eventRef.current.scrollIntoView({behavior:'smooth'})
-// }
+export const RefContext= createContext();
 
 const RefProvider = ({ children }) => {
   const classesRef = useRef();
@@ -18,6 +14,5 @@ const RefProvider = ({ children }) => {
     </RefContext.Provider>
   );
 };
-
 
 export default RefProvider;

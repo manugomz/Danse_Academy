@@ -9,13 +9,8 @@ import useRefContext from "../hooks/useRefContext";
 
 const Home = () => {
 
-  // const {landingRef,eventsRef,classesRef,scheduleRef}=useRefContext();
+  const {landingRef,eventsRef,classesRef,scheduleRef}=useRefContext();
 
-  // const scrollToElement = ()=>{
-  //   if (classesRef.current)classesRef.current.scrollIntoView({behavior:'smooth'});
-  //   if (eventsRef.current)eventsRef.current.scrollIntoView({behavior:'smooth'});
-  //   if (scheduleRef.current)scheduleRef.current.scrollIntoView({behavior:'smooth'});
-  // }
 
   return (
     <main
@@ -25,12 +20,11 @@ const Home = () => {
     via-gray-light via-40% 
     to-slate-200 min-h-[55vh]"
     >
-      {/* <LandingPage scrollToElement={scrollToElement} ref={landingRef}/> */}
+
       <LandingPage />
       <Events  />
       <Classes />
-      <Schedule/>
-      {/* <Schedule ref={scheduleRef}/> */}
+      <Schedule /> 
 
     </main>
   );
