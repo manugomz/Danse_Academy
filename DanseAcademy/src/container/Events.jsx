@@ -57,7 +57,7 @@ const Events = forwardRef(() => {
           onSubmit={handleButtonClick}
         />
       )}
-      <div className="flex items-center justify-around px-3 pb-48
+      <div className="flex items-center justify-around px-3 pb-24 md:pb-48
         flex-col
         sm:flex-wrap sm:flex-row
         xl:justify-center xl:gap-5
@@ -69,7 +69,7 @@ const Events = forwardRef(() => {
           aria-label="Poster de evento"
             key={event.description}
             className="z-10 transform 
-                  max-h-[50vh] mb-2
+                  max-h-[50vh] mb-5
                   cursor-pointer
                   rounded-md
                   transition-transform duration-300 ease-in-out hover:scale-105

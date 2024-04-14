@@ -9,8 +9,9 @@ export default function DaysForMobile({ daysSpanish, currentDay, setCurrentDay }
     carousel:
       "w-[60%] self-center flex justify-around items-center mb-10 xl:hidden",
 
-    day: `rounded-br-2xl rounded-tl-2xl bg-slate-200 px-5 py-2 w-1/2
-    text-center text-2xl font-bold  shadow-[0px_10px_0px_-3px_#FEBC04]`,
+    day: `rounded-br-2xl rounded-tl-2xl bg-slate-200 
+    px-5 py-2 min-w-1/2
+    text-center text-xl md:text-2xl font-bold shadow-[0px_10px_0px_-3px_#FEBC04]`,
 
     icon: `h-10 text-4xl text-yellow-dark`
   };
