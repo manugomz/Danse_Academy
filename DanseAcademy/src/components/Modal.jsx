@@ -1,6 +1,7 @@
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import { FaCalendarPlus } from "react-icons/fa";
+import { encode } from "url-encode-decode";
 
 const Modal = ({ onClose, evento }) => {
   const styles = {
@@ -13,7 +14,7 @@ const Modal = ({ onClose, evento }) => {
                 bg-yellow-dark text-2xl text-black  
                 hover:scale-110 hover:bg-yellow-darker hover:text-white`,
 
-    bookButton:`absolute bottom-2 left-2
+    bookButton: `absolute bottom-[2%] left-[3%]
                 m-2 flex w-10
                 items-center rounded-full 
                 bg-yellow-dark p-2 font-bold
@@ -21,13 +22,16 @@ const Modal = ({ onClose, evento }) => {
                 hover:w-44 hover:bg-yellow-darker hover:text-white`
   };
 
-  //TODO: Make the text variable (create URL encoder)
-  const text='Hola%20%C2%A1Quiero%20reservar%20un%20evento%21'
+  const encoded = encode(evento.description).replaceAll("+", "%20");
+  const text =
+    "Hola%20%C2%A1Quiero%20reservar%20un%20cupo%20en%20el%20evento: " + encoded;
 
   return (
     <div className={styles.modal} onClick={() => onClose()}>
-      <div className="relative mx-2 flex flex-col rounded-md p-2">
-        <IoClose className={styles.closeButton} onClick={() => onClose()} />
+      <div className="relative mx-2 flex flex-col rounded-md p-2" role="dialog" aria-modal="true">
+        <button className={styles.closeButton} onClick={() => onClose()} aria-label="Close Modal">
+          <IoClose />
+        </button>
         <img
           className="max-h-[80vh] rounded-lg"
           src={evento.img}
@@ -35,7 +39,7 @@ const Modal = ({ onClose, evento }) => {
         />
         <a
           className={styles.bookButton}
-          href={"https://wa.me/+573002424995?text="+text}
+          href={"https://wa.me/+573002424995?text=" + text}
           onClick={() => onClose()}
           target="_blank">
           <div className="pl-[0.15rem]">

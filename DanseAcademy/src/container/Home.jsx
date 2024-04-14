@@ -14,7 +14,7 @@ const Home = () => {
 
   return (
     <main
-      className=" md:pl-24
+      className=" lg:pl-24
     bg-gradient-to-b 
     from-gray-dark from-1% 
     via-gray-light via-40% 

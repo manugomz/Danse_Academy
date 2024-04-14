@@ -14,7 +14,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
     "react-player": "^2.15.1",
-    "react-router-dom": "^6.21.3"
+    "react-router-dom": "^6.21.3",
+    "url-encode-decode": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

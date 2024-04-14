@@ -12,9 +12,14 @@ const Events = forwardRef(() => {
   const eventos = [
     {
       img: "../images/eventos/afro_1.jpeg",
-      description: "Afrocolombian fusion"
+      description: "Afrocolombian fusión"
     },
-    { img: "../images/eventos/heels_1.jpeg", description: "Heels" },
+    {
+      img: "../images/eventos/salsa_fusion.jpg",
+      description: "Salsa fusión"
+    },
+  
+    { img: "../images/eventos/heels_1.jpeg", description: "Heels Workshop" },
     {
       img: "../images/eventos/workshop_1.jpeg",
       description: "Taller técnico-comercial dance"
@@ -50,17 +55,26 @@ const Events = forwardRef(() => {
             setModalOpen(false);
           }}
           onSubmit={handleButtonClick}
-          /* ADD redirect */
         />
       )}
-      <div className="flex flex-col items-center justify-center gap-10 pb-48 md:flex-row">
+      <div className="flex items-center justify-around px-3 pb-48
+        flex-col
+        sm:flex-wrap sm:flex-row
+        xl:justify-center xl:gap-5
+        2xl:flex-row">
         {eventos.map(event => (
           <img
+          tabIndex={0}
+          role='button'
+          aria-label="Poster de evento"
             key={event.description}
-            className="z-10 h-[80vh] max-w-max transform
+            className="z-10 transform 
+                  max-h-[50vh] mb-2
                   cursor-pointer
                   rounded-md
-                  transition-transform duration-300 ease-in-out hover:scale-105 max-h-[50vh] md:max-h-[60vh]"
+                  transition-transform duration-300 ease-in-out hover:scale-105
+                  sm:mb-10
+                  2xl:max-h-[60vh]"
             src={event.img}
             alt={event.description}
             onClick={() => handleOpenModal(event)}

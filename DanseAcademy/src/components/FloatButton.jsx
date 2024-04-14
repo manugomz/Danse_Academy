@@ -9,10 +9,11 @@ export default function FloatButton({ text }) {
                 items-center justify-center 
                 rounded-full bg-yellow-dark 
                 transition-all hover:scale-125 hover:bg-yellow-darker hover:text-slate-100 
-                md:flex md:mb-4"
+                lg:flex md:mb-4"
       href={text}
-      target="_blank">
-      <IoLogoWhatsapp className="text-4xl" />
+      target="_blank"
+      aria-label="Whatsapp link">
+      <IoLogoWhatsapp className="text-4xl" aria-label="Whatsapp logo"/>
     </a>
   );
 }

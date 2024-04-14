@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { Fragment, React, useState } from "react";
 
 import { IoHome } from "react-icons/io5";
 import { FaPersonFalling, FaCalendar } from "react-icons/fa6";
@@ -18,28 +18,30 @@ const Header = () => {
   const { landingRef, eventsRef, classesRef, scheduleRef } = useRefContext();
 
   const styles = {
-    bar: `flex w-auto md:h-full items-center justify-between 
-            sm:px-6 md:flex-col md:px-2 lg:px-4`,
+    bar: `flex w-auto items-center justify-between
+            sm:px-6 
+            lg:flex-col lg:px-4 lg:h-[95vh]`,
 
     headerButton: `font-2xl w-8 flex transition-all ease-in
                     font-bold text-yellow-light text-center
                     hover:text-white focus:text-white`,
 
-    header: ` z-50 bg-gray-dark
-            py-3 transition-all md:fixed md:h-full
-            md:w-24
-            md:hover:w-40 [&>div>nav>button]:hover:w-28`,
+    header: `z-50 bg-gray-dark
+            py-3 transition-all lg:fixed lg:h-full
+            lg:w-24
+            lg:hover:w-40 [&>div>nav>button]:hover:w-28`,
 
-    logoDiv: `h-12 pl-5 md:p-0 md:h-20 flex items-center`,
+    logoDiv: `h-12 pl-5 md:p-0 lg:h-20 flex items-center`,
 
-    navDesktop: `hidden flex-col items-center pt-8 mb-[20vh]
-                md:pb-[28vh] md:flex md:gap-10
+    navDesktop: `hidden flex-col items-center pt-8 
+                lg:flex gap-10
                 2xl:gap-16 `,
 
     navTextDesktop: `truncate text-clip pl-2`
   };
 
   const navlinks = ["Home", "Eventos", "Clases", "Horarios"];
+  const refs = [landingRef, eventsRef, classesRef, scheduleRef];
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -47,8 +49,9 @@ const Header = () => {
     setIsOpen(prev => !prev);
   };
 
-  const handleClick = () => {
+  const handleClick = ref => {
     setIsOpen(prev => !prev);
+    scrollToElement(ref);
   };
 
   return (
@@ -58,7 +61,7 @@ const Header = () => {
           <img
             src="../images/Text_Logo.png"
             alt="DANSÉ"
-            className="h-10 text-yellow-light md:h-auto"
+            className="h-10 text-yellow-light sm:h-14 lg:h-auto"
           />
         </div>
         {/*Navlinks */}
@@ -67,13 +70,10 @@ const Header = () => {
             key="home"
             className={styles.headerButton}
             onClick={() => scrollToElement(landingRef)}>
-            {/*HOME */}
-            {/* <a href="#home" className="w-full flex"> */}
             <div className="pl-2">
-              <IoHome className="inline text-2xl" />
+              <IoHome className="inline text-2xl" aria-label="home" />
             </div>
             <span className={styles.navTextDesktop}>Home</span>
-            {/* </a> */}
           </button>
 
           <button
@@ -83,7 +83,7 @@ const Header = () => {
             {" "}
             {/*EVENTOS */}
             <div className="pl-2">
-              <FaCalendar className="inline text-2xl" />
+              <FaCalendar className="inline text-2xl" aria-label="calendar" />
             </div>
             <span className={styles.navTextDesktop}>Eventos</span>
           </button>
@@ -94,7 +94,10 @@ const Header = () => {
             onClick={() => scrollToElement(classesRef)}>
             {/*CLASES */}
             <div className="pl-2">
-              <FaPersonFalling className="inline rotate-45 text-2xl" />
+              <FaPersonFalling
+                className="inline rotate-45 text-2xl"
+                aria-label="dance"
+              />
             </div>
             <span className={styles.navTextDesktop}>Clases</span>
           </button>
@@ -102,12 +105,14 @@ const Header = () => {
           <button
             key="schedule"
             className={styles.headerButton}
-            onClick={() => scrollToElement(scheduleRef)}
-            href="#horarios">
+            onClick={() => scrollToElement(scheduleRef)}>
             {/*HORARIOS */}
 
             <div className="pl-2">
-              <MdAccessTimeFilled className="inline text-2xl" />
+              <MdAccessTimeFilled
+                className="inline text-2xl"
+                aria-label="clock"
+              />
             </div>
             <span className={styles.navTextDesktop}>Horarios</span>
           </button>
@@ -117,7 +122,7 @@ const Header = () => {
         <button
           type="button"
           onClick={handleMenu}
-          className="font-2xl flex items-center justify-center pr-5 text-yellow-light md:hidden">
+          className="font-2xl flex items-center justify-center pr-5 text-yellow-light lg:hidden">
           <span className="sr-only">Open Main Menu</span>
           {isOpen ? (
             <RiCloseLine className="text-2xl" />
@@ -128,18 +133,18 @@ const Header = () => {
       </div>
       {/* Mobile Menu */}
       {isOpen ? (
-      <nav className="font-2xl flex flex-col space-y-1 px-2 pb-3 pt-2 sm:px-3 md:hidden ">
-        {navlinks.map((link, index) => (
-          <button
-              key={index}
-              onClick={handleClick}
+        <nav className="font-2xl flex flex-col space-y-1 px-2 pb-3 pt-2 sm:px-3 md:hidden ">
+          {navlinks.map((link, i) => (
+            <button
+              key={i}
+              onClick={() => handleClick(refs[i])}
               className="font-2xl font-md block rounded-md
                   px-3 py-2 text-center text-base
                   text-yellow-light focus:text-white">
               {link}
-          </button>
-        ))}
-      </nav>
+            </button>
+          ))}
+        </nav>
       ) : null}
     </header>
   );
