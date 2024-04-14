@@ -7,7 +7,8 @@ import DaysForDesktop from "../components/DaysForDesktop";
 import DaysForMobile from "../components/DaysForMobile";
 
 const Schedule = forwardRef((props, ref) => {
-  const [dayForSchedule, setDayForSchedule] = useState("monday");
+
+  const [currentDay, setCurrentDay] = useState(0);
 
   const daysForSchedule = [
     "monday",
@@ -37,10 +38,10 @@ const Schedule = forwardRef((props, ref) => {
         Horarios
       </h2>
       {/*Days for computer */}
-      <DaysForDesktop setDayForSchedule={setDayForSchedule} daysForSchedule={daysForSchedule} daysSpanish={daysSpanish}/>
+      <DaysForDesktop daysSpanish={daysSpanish} currentDay={currentDay} setCurrentDay={setCurrentDay}/>
       {/*Days for mobile */}
-      <DaysForMobile/>
-      <Table day={dayForSchedule} />
+      <DaysForMobile daysSpanish={daysSpanish} currentDay={currentDay} setCurrentDay={setCurrentDay}/>
+      <Table day={daysForSchedule[currentDay]} />
     </section>
   );
 });
