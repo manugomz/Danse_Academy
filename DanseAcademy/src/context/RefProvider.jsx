@@ -1,6 +1,6 @@
-import React, { createContext, useRef } from 'react';
+import React, { createContext, useRef } from "react";
 
-export const RefContext= createContext();
+export const RefContext = createContext();
 
 const RefProvider = ({ children }) => {
   const classesRef = useRef();
@@ -9,7 +9,8 @@ const RefProvider = ({ children }) => {
   const scheduleRef = useRef();
 
   return (
-    <RefContext.Provider value={{ landingRef,eventsRef,classesRef,scheduleRef}}>
+    <RefContext.Provider
+      value={{ landingRef, eventsRef, classesRef, scheduleRef }}>
       {children}
     </RefContext.Provider>
   );

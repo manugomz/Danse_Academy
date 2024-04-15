@@ -10,40 +10,65 @@ import FloatButton from "./FloatButton";
 import useRefContext from "../hooks/useRefContext";
 
 const Header = () => {
-  const scrollToElement = reference => {
-    if (reference.current)
-      reference.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const { landingRef, eventsRef, classesRef, scheduleRef } = useRefContext();
 
   const styles = {
     bar: `flex w-auto items-center justify-between
-            sm:px-6 
-            lg:flex-col lg:px-4 lg:h-[95vh]`,
+          sm:px-6 
+          lg:flex-col lg:px-4 lg:h-[95vh]`,
 
-    headerButton: `font-2xl w-8 flex transition-all ease-in
-                    font-bold text-yellow-light text-center
-                    hover:text-white focus:text-white`,
+    hamburguer:`flex items-center justify-center 
+                font-2xl pr-5 text-yellow-light 
+                lg:hidden`,
 
-    header: `z-50 bg-gray-dark
-            py-3 transition-all lg:fixed lg:h-full
-            lg:w-24
-            lg:hover:w-40 [&>div>nav>button]:hover:w-28`,
+    headerButton:`w-8 flex transition-all ease-in
+                font-2xl font-bold text-yellow-light text-center
+                hover:text-white focus:text-white`,
 
-    logoDiv: `h-12 pl-5 md:p-0 lg:h-20 flex items-center`,
+    header:`z-50 bg-gray-dark
+          py-3 transition-all lg:fixed lg:h-full
+          lg:w-24
+          lg:hover:w-40 [&>div>nav>button]:hover:w-28`,
 
-    navDesktop: `hidden flex-col items-center pt-8 
-                lg:flex gap-10
-                2xl:gap-16 `,
+    icon:`inline text-2xl`,
+
+    logoDiv:`flex items-center
+            h-12 pl-5 
+            md:p-0 
+            lg:h-20 `,
+
+    logoImg:`h-10 text-yellow-light 
+            sm:h-14 lg:h-auto`,
+
+    mobileMenu:`block  font-2xl font-md 
+              rounded-md px-3 py-2 
+              text-center text-base text-yellow-light 
+              focus:text-white`,
+
+    mobileNav:`font-2xl flex flex-col 
+              space-y-1 px-2 pb-3 pt-2 
+              sm:px-3 
+              md:hidden`,
+
+    navDesktop:`hidden flex-col items-center 
+              pt-8 gap-10
+              lg:flex 
+              2xl:gap-16 `,
 
     navTextDesktop: `truncate text-clip pl-2`
   };
 
-  const navlinks = ["Home", "Eventos", "Clases", "Horarios"];
+
+  const { landingRef, eventsRef, classesRef, scheduleRef } = useRefContext();
   const refs = [landingRef, eventsRef, classesRef, scheduleRef];
 
+  const navlinks = ["Home", "Eventos", "Clases", "Horarios"];
+
   const [isOpen, setIsOpen] = useState(false);
+
+  const scrollToElement = reference => {
+    if (reference.current)
+      reference.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   const handleMenu = () => {
     setIsOpen(prev => !prev);
@@ -61,7 +86,7 @@ const Header = () => {
           <img
             src="../images/Text_Logo.png"
             alt="DANSÉ"
-            className="h-10 text-yellow-light sm:h-14 lg:h-auto"
+            className={styles.logoImg}
           />
         </div>
         {/*Navlinks */}
@@ -71,7 +96,7 @@ const Header = () => {
             className={styles.headerButton}
             onClick={() => scrollToElement(landingRef)}>
             <div className="pl-2">
-              <IoHome className="inline text-2xl" aria-label="home" />
+              <IoHome className={styles.icon} aria-label="home" />
             </div>
             <span className={styles.navTextDesktop}>Home</span>
           </button>
@@ -83,7 +108,7 @@ const Header = () => {
             {" "}
             {/*EVENTOS */}
             <div className="pl-2">
-              <FaCalendar className="inline text-2xl" aria-label="calendar" />
+              <FaCalendar className={styles.icon} aria-label="calendar" />
             </div>
             <span className={styles.navTextDesktop}>Eventos</span>
           </button>
@@ -95,7 +120,7 @@ const Header = () => {
             {/*CLASES */}
             <div className="pl-2">
               <FaPersonFalling
-                className="inline rotate-45 text-2xl"
+                className={styles.icon + " rotate-45"}
                 aria-label="dance"
               />
             </div>
@@ -110,7 +135,7 @@ const Header = () => {
 
             <div className="pl-2">
               <MdAccessTimeFilled
-                className="inline text-2xl"
+                className={styles.icon}
                 aria-label="clock"
               />
             </div>
@@ -123,7 +148,7 @@ const Header = () => {
           type="button"
           onClick={handleMenu}
           aria-label='hamburguer menu'
-          className="font-2xl flex items-center justify-center pr-5 text-yellow-light lg:hidden">
+          className={styles.hamburguer}>
           <span className="sr-only">Open Main Menu</span>
           {isOpen ? (
             <RiCloseLine className="text-2xl" />
@@ -134,14 +159,12 @@ const Header = () => {
       </div>
       {/* Mobile Menu */}
       {isOpen ? (
-        <nav className="font-2xl flex flex-col space-y-1 px-2 pb-3 pt-2 sm:px-3 md:hidden ">
+        <nav className={styles.mobileNav}>
           {navlinks.map((link, i) => (
             <button
               key={i}
               onClick={() => handleClick(refs[i])}
-              className="font-2xl font-md block rounded-md
-                  px-3 py-2 text-center text-base
-                  text-yellow-light focus:text-white">
+              className={styles.mobileMenu}>
               {link}
             </button>
           ))}

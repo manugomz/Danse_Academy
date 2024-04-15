@@ -6,15 +6,24 @@ import useRefContext from "../hooks/useRefContext";
 
 const Classes = forwardRef((props, ref) => {
 
+  const styles={
+    classesSection:`relative flex flex-col justify-center 
+            bg-yellow-dark px-5 
+            cursor-default
+            sm:px-0`,
+
+    Title:`text-center text-4xl text-gray-dark font-bold 
+          pt-16 pb-16 mx-2
+          md:text-6xl`
+  };
+
   const {classesRef} =useRefContext(RefContext);
 
   return (
-    <section className="relative flex flex-col justify-center bg-yellow-dark cursor-default px-5 sm:px-0"  id="clases">
+    <section className={styles.classesSection}  id="clases">
       <h2
       ref={classesRef}
-        className=" 
-            text-center text-4xl md:text-6xl font-bold pt-16 
-            text-gray-dark pb-16 mx-2">
+        className={styles.Title}>
         Clases
       </h2>
       <EmbedVideo />

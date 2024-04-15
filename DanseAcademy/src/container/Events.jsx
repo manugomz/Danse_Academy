@@ -6,8 +6,29 @@ import { RefContext } from "../context/RefProvider";
 import useRefContext from "../hooks/useRefContext";
 
 const Events = forwardRef(() => {
+  const styles = {
 
-  const {eventsRef} =useRefContext(RefContext);
+    poster:`z-10 cursor-pointer
+            max-h-[50vh] rounded-md mb-5
+            t transform ransition-transform duration-300 ease-in-out hover:scale-105
+            sm:mb-10
+            2xl:max-h-[60vh]`,
+
+    postersContainer:`flex flex-col items-center justify-around 
+                      px-5 pb-24
+                      sm:flex-row sm:flex-wrap 
+                      md:pb-48
+                      xl:justify-center xl:gap-5
+                      2xl:flex-row`,
+
+    section:`bg-gray-dark`,
+
+
+    title: `mb-10 px-3 cursor-default
+            text-center text-4xl font-bold text-yellow-dark
+            md:mb-24 md:pt-16 md:text-6xl
+            2xl:mb-32 2xl:pt-24`,
+  };
 
   const eventos = [
     {
@@ -20,6 +41,8 @@ const Events = forwardRef(() => {
       description: "Taller técnico-comercial dance"
     }
   ];
+
+  const { eventsRef } = useRefContext(RefContext);
 
   const [modalOpen, setModalOpen] = useState(false);
 
@@ -35,12 +58,9 @@ const Events = forwardRef(() => {
   };
 
   return (
-    <section className=" relative bg-gray-dark" ref={eventsRef} id='eventos'>
+    <section className={styles.section} ref={eventsRef} id="eventos">
       <h2
-        className="mb-10 px-3 text-center text-4xl
-            font-bold text-yellow-dark 
-            md:mb-24 md:pt-16 md:text-6xl
-            2xl:mb-32 2xl:pt-24 cursor-default ">
+        className={styles.title}>
         Próximos eventos
       </h2>
       {modalOpen && (
@@ -52,24 +72,15 @@ const Events = forwardRef(() => {
           onSubmit={handleButtonClick}
         />
       )}
-      <div className="flex items-center justify-around px-5 pb-24 md:pb-48
-        flex-col
-        sm:flex-wrap sm:flex-row
-        xl:justify-center xl:gap-5
-        2xl:flex-row">
+      <div
+        className={styles.postersContainer}>
         {eventos.map(event => (
           <img
-          tabIndex={0}
-          role='button'
-          aria-label="Poster de evento"
+            tabIndex={0}
+            role="button"
+            aria-label="Poster de evento"
             key={event.description}
-            className="z-10 transform 
-                  max-h-[50vh] mb-5
-                  cursor-pointer
-                  rounded-md
-                  transition-transform duration-300 ease-in-out hover:scale-105
-                  sm:mb-10
-                  2xl:max-h-[60vh]"
+            className={styles.poster}
             src={event.img}
             alt={event.description}
             onClick={() => handleOpenModal(event)}

@@ -2,18 +2,27 @@ import React, { useState } from "react";
 
 import { FaCircleChevronLeft, FaCircleChevronRight } from "react-icons/fa6";
 
-export default function DaysForMobile({ daysSpanish, currentDay, setCurrentDay }) {
+export default function DaysForMobile({
+  daysSpanish,
+  currentDay,
+  setCurrentDay
+}) {
   const styles = {
-    arrowButton: "hover:scale-125 ease-in-out transition-all",
+    arrowButton: `ease-in-out transition-all
+                hover:scale-125`,
 
-    carousel:
-      "w-full self-center flex justify-between items-center mb-10 px-5 xl:hidden",
+    carousel: `w-full self-center
+              flex justify-between items-center mb-10 px-5 
+              xl:hidden`,
 
     day: `rounded-br-2xl rounded-tl-2xl bg-slate-200 
-    px-5 py-2 min-w-1/2
-    text-center text-lg md:text-2xl font-bold shadow-[0px_10px_0px_-3px_#FEBC04]`,
+        font-bold
+        px-5 py-2 min-w-1/2
+        text-center text-lg shadow-[0px_10px_0px_-3px_#FEBC04]
+        md:text-2xl`,
 
-    icon: `h-10 text-3xl md:text-4xl text-yellow-dark`
+    icon: `h-10 text-3xl text-yellow-dark
+        md:text-4xl`
   };
 
   const days = daysSpanish;
@@ -35,11 +44,15 @@ export default function DaysForMobile({ daysSpanish, currentDay, setCurrentDay }
 
   return (
     <div className={styles.carousel}>
-      <button className={styles.arrowButton} onClick={() => clickArrow("left")}>
+      <button
+        aria-label="button arrow previous"
+        className={styles.arrowButton}
+        onClick={() => clickArrow("left")}>
         <FaCircleChevronLeft className={styles.icon} />
       </button>
       <div className={styles.day}>{days[currentDay]}</div>
       <button
+        aria-label="button arrow next"
         className={styles.arrowButton}
         onClick={() => clickArrow("right")}>
         <FaCircleChevronRight className={styles.icon} />

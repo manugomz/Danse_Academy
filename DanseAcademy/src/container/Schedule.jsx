@@ -8,6 +8,15 @@ import DaysForMobile from "../components/DaysForMobile";
 
 const Schedule = forwardRef((props, ref) => {
 
+  const styles={
+    scheduleSection:`relative flex flex-col justify-center cursor-default 
+                    bg-gray-dark px-5 pb-40`,
+
+    title:`text-center text-4xl text-yellow-dark font-bold
+          my-10 
+          md:my-24 md:text-6xl`,
+  }
+
   const [currentDay, setCurrentDay] = useState(0);
 
   const daysForSchedule = [
@@ -28,13 +37,11 @@ const Schedule = forwardRef((props, ref) => {
 
   return (
     <section
-      className="relative flex cursor-default flex-col justify-center bg-gray-dark px-5 pb-40"
+      className={styles.scheduleSection}
       ref={scheduleRef}
       id="horarios">
       <h2
-        className=" 
-            my-10 text-center text-4xl md:text-6xl font-bold
-            text-yellow-dark md:my-24">
+        className={styles.title}>
         Horarios
       </h2>
       {/*Days for computer */}
