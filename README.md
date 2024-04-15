@@ -15,7 +15,9 @@ This is a website created with Javacript, React and Tailwind CSS. With the packa
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Demo](#demo)
-  - [Usage](#usage)
+  - [Screenshots](#screenshots)
+  - [Web](#web)
+  - [Mobile](#mobile)
   - [Credits](#credits)
   - [Contributions](#contributions)
 
@@ -33,11 +35,18 @@ A live demo of the application can be found [here](https://danse-academy.vercel.
 
 ## Screenshots
 
+### Web
+
 ![image](https://github.com/manugomz/Danse_Academy/assets/63323926/2db05920-a56a-4fa1-b115-a95d36a745fa)
 
 
 ![image](https://github.com/manugomz/Danse_Academy/assets/63323926/78d2cf2d-9fce-4043-ba5e-7a42ab8980d8)
 
+### Mobile
+
+![image](https://github.com/manugomz/Danse_Academy/assets/63323926/f4bbae53-8c59-4010-8b80-30e386b6fa46)
+
+![image](https://github.com/manugomz/Danse_Academy/assets/63323926/5d8180b7-d108-45b0-aa99-70dbd5a2d840)
 
 
 ## Credits
