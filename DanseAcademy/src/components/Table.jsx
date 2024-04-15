@@ -1,4 +1,5 @@
 import React from "react";
+
 import { classesSchedule } from "../database/ScheduleDB";
 
 export default function Table({ day }) {

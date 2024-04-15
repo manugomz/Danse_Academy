@@ -1,10 +1,11 @@
-import React, { forwardRef, useState, useEffect, useRef } from "react";
-import { RefContext } from "../context/RefProvider";
-import useRefContext from "../hooks/useRefContext";
+import React, { forwardRef, useState} from "react";
 
-import Table from "../components/Table";
 import DaysForDesktop from "../components/DaysForDesktop";
 import DaysForMobile from "../components/DaysForMobile";
+import Table from "../components/Table";
+
+import { RefContext } from "../context/RefProvider";
+import useRefContext from "../hooks/useRefContext";
 
 const Schedule = forwardRef((props, ref) => {
 

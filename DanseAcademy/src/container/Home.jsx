@@ -1,9 +1,9 @@
 
 import Classes from "./Classes";
 import Events from "./Events";
+import FloatButton from "../components/FloatButton";//!Float button for mobile
 import LandingPage from "./LandingPage";
 import Schedule from "./Schedule";
-import FloatButton from "../components/FloatButton";//!Float button for mobile
 
 import useRefContext from "../hooks/useRefContext";
 

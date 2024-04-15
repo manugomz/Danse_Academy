@@ -2,11 +2,12 @@ import { Fragment, React, useState } from "react";
 
 import { IoHome } from "react-icons/io5";
 import { FaPersonFalling, FaCalendar } from "react-icons/fa6";
-import { MdAccessTimeFilled } from "react-icons/md";
 import { LuMenu } from "react-icons/lu";
+import { MdAccessTimeFilled } from "react-icons/md";
 import { RiCloseLine } from "react-icons/ri";
 
 import FloatButton from "./FloatButton";
+
 import useRefContext from "../hooks/useRefContext";
 
 const Header = () => {
