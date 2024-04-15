@@ -46,7 +46,7 @@ A live demo of the application can be found [here](https://danse-academy.vercel.
 
 ![image](https://github.com/manugomz/Danse_Academy/assets/63323926/f4bbae53-8c59-4010-8b80-30e386b6fa46)
 
-![image](https://github.com/manugomz/Danse_Academy/assets/63323926/5d8180b7-d108-45b0-aa99-70dbd5a2d840)
+![image](https://github.com/manugomz/Danse_Academy/assets/63323926/e6287e58-34fc-4efc-b811-cb27321bd1e2)
 
 
 ## Credits
