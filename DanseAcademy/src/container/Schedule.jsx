@@ -28,12 +28,12 @@ const Schedule = forwardRef((props, ref) => {
 
   return (
     <section
-      className="relative flex cursor-default flex-col justify-center bg-gray-dark pb-40"
+      className="relative flex cursor-default flex-col justify-center bg-gray-dark px-5 pb-40"
       ref={scheduleRef}
       id="horarios">
       <h2
         className=" 
-            my-10 text-center text-6xl font-bold
+            my-10 text-center text-4xl md:text-6xl font-bold
             text-yellow-dark md:my-24">
         Horarios
       </h2>

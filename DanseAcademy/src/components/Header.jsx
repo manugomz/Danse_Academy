@@ -122,6 +122,7 @@ const Header = () => {
         <button
           type="button"
           onClick={handleMenu}
+          aria-label='hamburguer menu'
           className="font-2xl flex items-center justify-center pr-5 text-yellow-light lg:hidden">
           <span className="sr-only">Open Main Menu</span>
           {isOpen ? (

@@ -9,12 +9,12 @@ const Classes = forwardRef((props, ref) => {
   const {classesRef} =useRefContext(RefContext);
 
   return (
-    <section className="relative flex flex-col justify-center bg-yellow-dark cursor-default"  id="clases">
+    <section className="relative flex flex-col justify-center bg-yellow-dark cursor-default px-5 sm:px-0"  id="clases">
       <h2
       ref={classesRef}
         className=" 
-            text-center text-6xl font-bold
-            text-gray-dark pb-16 md:pb-0">
+            text-center text-4xl md:text-6xl font-bold pt-16 
+            text-gray-dark pb-16 mx-2">
         Clases
       </h2>
       <EmbedVideo />

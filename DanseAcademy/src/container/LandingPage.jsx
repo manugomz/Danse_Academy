@@ -49,7 +49,7 @@ const LandingPage = forwardRef(() => {
           target="_blank"
           className=" z-10
             rounded-2xl bg-yellow-dark
-              px-4 py-2 text-lg
+              px-5 py-2 text-lg
               text-zinc-800
               drop-shadow-lg
               transition-all ease-in

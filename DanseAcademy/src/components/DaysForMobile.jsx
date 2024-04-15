@@ -7,13 +7,13 @@ export default function DaysForMobile({ daysSpanish, currentDay, setCurrentDay }
     arrowButton: "hover:scale-125 ease-in-out transition-all",
 
     carousel:
-      "w-[60%] self-center flex justify-around items-center mb-10 xl:hidden",
+      "w-full self-center flex justify-between items-center mb-10 px-5 xl:hidden",
 
     day: `rounded-br-2xl rounded-tl-2xl bg-slate-200 
     px-5 py-2 min-w-1/2
-    text-center text-xl md:text-2xl font-bold shadow-[0px_10px_0px_-3px_#FEBC04]`,
+    text-center text-lg md:text-2xl font-bold shadow-[0px_10px_0px_-3px_#FEBC04]`,
 
-    icon: `h-10 text-4xl text-yellow-dark`
+    icon: `h-10 text-3xl md:text-4xl text-yellow-dark`
   };
 
   const days = daysSpanish;

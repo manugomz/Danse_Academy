@@ -14,11 +14,6 @@ const Events = forwardRef(() => {
       img: "../images/eventos/afro_1.jpeg",
       description: "Afrocolombian fusión"
     },
-    {
-      img: "../images/eventos/salsa_fusion.jpg",
-      description: "Salsa fusión"
-    },
-  
     { img: "../images/eventos/heels_1.jpeg", description: "Heels Workshop" },
     {
       img: "../images/eventos/workshop_1.jpeg",
@@ -57,7 +52,7 @@ const Events = forwardRef(() => {
           onSubmit={handleButtonClick}
         />
       )}
-      <div className="flex items-center justify-around px-3 pb-24 md:pb-48
+      <div className="flex items-center justify-around px-5 pb-24 md:pb-48
         flex-col
         sm:flex-wrap sm:flex-row
         xl:justify-center xl:gap-5
@@ -82,9 +77,9 @@ const Events = forwardRef(() => {
         ))}
       </div>
       {/*Gradient*/}
-      <div className="absolute bottom-0 w-full">
+      {/* <div className="absolute bottom-0 w-full">
         <div className="h-[80vh] bg-gradient-to-b from-transparent via-transparent via-70% to-yellow-dark"></div>
-      </div>
+      </div> */}
     </section>
   );
 });

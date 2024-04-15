@@ -1,20 +1,22 @@
 import React from "react";
 import { classesSchedule } from "../database/ScheduleDB";
+import { Transition } from "@headlessui/react";
 
 export default function Table({ day }) {
   const dayClasses = classesSchedule[day];
 
   return (
-    <div className="w-[90vw] self-center flex justify-center sm:w-[60%] ">
+    <div className="w-[80%] self-center flex justify-center sm:w-[60%]">
+   
       <table className="z-30  border-collapse table-fixed">
         <colgroup>
-          <col className="w-[8vw]" />
+          <col className="w-[6vw] md:w-[8vw]" />
         </colgroup>
 
         <tbody className="text-slate-200 sm:text-lg md:text-2xl">
           {dayClasses.map(singleClass => (
             <tr
-              className="h-24"
+              className="h-24 animate-fade animate-once animate-ease-out animate-duration-500"
               key={day + singleClass.professor + singleClass.time[0]}>
               <td className=" text-right md:pr-3 xl:py-3">
                 <p className="font-bold">{singleClass.time[0]}</p>
@@ -47,6 +49,7 @@ export default function Table({ day }) {
           ))}
         </tbody>
       </table>
+ 
     </div>
   );
 }
