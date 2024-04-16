@@ -3,6 +3,7 @@ import React from "react";
 import { FaWhatsapp, FaInstagram } from "react-icons/fa6";
 import { FiMail } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { encode } from "url-encode-decode";
 
 function Footer() {
   
@@ -31,6 +32,10 @@ function Footer() {
                 md:flex`,
   };
 
+  const whatsappMessage= "https://wa.me/+573002424995?text=" +encode('Hola Dansé, quisiera recibir más información').replaceAll("+", "%20");
+
+  const emailUrl=`mailto:${'alors.on.danse.adaemystudio@gmail.com'}?subject=${encodeURIComponent('¡Hola Dansé!')}`
+
   return (
     <footer className={styles.footer}>
       <div
@@ -58,7 +63,7 @@ function Footer() {
         <Link
           aria-label="Link to whatsapp chat"
           className={styles.links}
-          to="https://bit.ly/DanseAcademyStudio"
+          to={whatsappMessage}
           target="_blank">
           <FaWhatsapp className={styles.icons} aria-label="Whatsapp logo" />
         </Link>
@@ -72,7 +77,7 @@ function Footer() {
         <Link
           aria-label="Link to send dansé an email"
           className={styles.links}
-          to="mailto:${alors.on.danse.adaemystudio@gmail.com}?subject=${encodeURIComponent(¡Hola Dansé!)}">
+          to={emailUrl}>
           <FiMail className={styles.icons} aria-label="mail icon"/>
         </Link>
       </div>

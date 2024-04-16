@@ -143,7 +143,7 @@ const Header = () => {
             <span className={styles.navTextDesktop}>Horarios</span>
           </button>
         </nav>
-        <FloatButton text="Hola%20%C2%A1Quiero%20reservar%20una%20clase%21" />
+        <FloatButton text="https://wa.me/+573002424995?text=Hola%20%C2%A1Quiero%20reservar%20una%20clase%21" />
         {/*Hamburguer button */}
         <button
           type="button"

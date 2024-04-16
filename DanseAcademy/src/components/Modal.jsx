@@ -35,7 +35,7 @@ const Modal = ({ onClose, evento }) => {
 
   const encoded = encode(evento.description).replaceAll("+", "%20");
   const text =
-    "Hola%20%C2%A1Quiero%20reservar%20un%20cupo%20en%20el%20evento: " + encoded;
+    "Hola%20%C2%A1Quiero%20reservar%20un%20cupo%20en%20el%20evento: " + encoded +'%21';
 
   return (
     <div className={styles.modalBg} onClick={() => onClose()}>
