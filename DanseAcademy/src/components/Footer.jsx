@@ -18,7 +18,7 @@ function Footer() {
 
     linksSection:`flex justify-center gap-3 pb-10 pt-2 md:pt-0`,
 
-    logoImg:"mx-auto h-32 md:h-20",
+    logoImg:"mx-auto h-28 md:h-24 lg:h-32",
 
     logoContainer:"mx-[10%] rounded-md bg-gray-dark py-2 md:px-0",
 
@@ -41,13 +41,11 @@ function Footer() {
       <div
         className={styles.textSection}>
         <div>
-          <div className={styles.logoContainer}>
             <img
-              src="../images/Round_Logo.png"
+              src="../images/logo_yellow.png"
               className={styles.logoImg}
-              alt="Dansé Academy Studio"
+              alt="Dansé Academy Studio logo"
             />
-          </div>
           <h2 className={styles.subtitle}>Estudio de danza</h2>
         </div>
         <div className={styles.column}>
