@@ -11,7 +11,7 @@ This is a website created with Javacript, React and Tailwind CSS. With the packa
 
 ## Table of Contents
 
-- [Recetary](#Recetary)
+- [Dansé Academy](#Danse-Academy)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
   - [Demo](#demo)
